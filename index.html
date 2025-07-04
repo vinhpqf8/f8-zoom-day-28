@@ -23,6 +23,25 @@
     <div class="player">
       <!-- Dashboard -->
       <div class="dashboard">
+        <button class="help-btn">
+          <i class="fas fa-question"></i>
+        </button>
+        <!-- Modal hướng dẫn hotkey (ẩn mặc định, show bằng JS hoặc toggle class) -->
+        <div class="modal-hotkey">
+          <div class="modal-content">
+            <h3>Hướng dẫn sử dụng phím tắt</h3>
+            <ul>
+              <li><strong>Space</strong>: Play / Pause</li>
+              <li><strong>← / →</strong>: Tua lùi / tiến 10 giây</li>
+              <li><strong>↑ / ↓</strong>: Tăng / giảm âm lượng</li>
+              <li><strong>M</strong>: Bật / Tắt tiếng</li>
+              <li><strong>L</strong>: Lặp lại</li>
+              <li><strong>S</strong>: Shuffle (ngẫu nhiên)</li>
+              <!-- Thêm hướng dẫn khác nếu có -->
+            </ul>
+            <button class="close-modal" aria-label="Đóng">Đóng</button>
+          </div>
+        </div>
         <!-- Header -->
         <header>
           <h4>Now playing:</h4>
@@ -31,6 +50,7 @@
 
         <!-- CD -->
         <div class="cd">
+          <div class="cd-hole"></div>
           <div class="cd-thumb"></div>
         </div>
 

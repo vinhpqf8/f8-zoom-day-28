@@ -28,6 +28,9 @@ const musicPlayer = {
   currentTimeEl: document.querySelector(".current-time"),
   durationEl: document.querySelector(".duration"),
   avtThumbAnimate: null, // Animation cho avatar nhỏ của bài đang phát
+  helpBtn: document.querySelector(".help-btn"),
+  modalHotkey: document.querySelector(".modal-hotkey"),
+  closeModalBtn: document.querySelector(".close-modal"),
 
   // Danh sách bài hát
   songList: [
@@ -283,6 +286,34 @@ const musicPlayer = {
       }
     );
     cdThumbAnimate.pause();
+
+    //  xử lý Help Modal
+
+    this.helpBtn.onclick = () => {
+      this.modalHotkey.classList.add("active");
+    };
+
+    document.addEventListener("keydown", (e) => {
+      if (e.code === "Slash") {
+        this.modalHotkey.classList.toggle("active");
+      }
+    });
+
+    this.closeModalBtn.onclick = () => {
+      this.modalHotkey.classList.remove("active");
+    };
+
+    this.modalHotkey.onclick = (e) => {
+      if (e.target === this.modalHotkey) {
+        this.modalHotkey.classList.remove("active");
+      }
+    };
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        this.modalHotkey.classList.remove("active");
+      }
+    });
   },
 
   // Xử lý điều hướng bài hát (trước/sau)
